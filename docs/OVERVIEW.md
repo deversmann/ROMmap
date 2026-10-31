@@ -11,8 +11,9 @@ Hardlinks have boundaries: pool and target must support hardlinking within the s
 3. Import selected files into the managed pool explicitly.
 4. Select a versioned layout profile and review a dry-run with collisions/conflicts.
 5. Apply the plan, inspect job results, and audit/reconcile the target after changes.
+6. For the first device workflow, manually copy the Knulli-oriented staging tree to an Anbernic RG34XXSP SD card; this is a real copy, not a portable hardlink.
 
-The headless CLI and REST API come first; a web setup/dashboard follows. Linux and containers with persistent database and correct mount configuration are initial deployment targets. SQLite is the initial database. DAT recognition, multi-file grouping, archive-member inspection, handheld exports and browser emulation are later work, not implied by the first release.
+The headless CLI and REST API come first; a web setup/dashboard follows. The first deployment target is rootless Podman on headless RHEL 10, with the pool and staging tree inside one TrueNAS SCALE NFS dataset, and application state/SQLite on local persistent storage. A colocated NGINX proxy can serve the future web UI over HTTPS for LAN/Tailscale access, with ROMmap's own single-admin login. Exact stack and authentication choices remain M0 decisions. Existing media apps' successful hardlink use is encouraging, but ROMmap will still probe its own container paths. DAT recognition, multi-file grouping, archive-member inspection, handheld exports and browser emulation are later work, not implied by the first release.
 
 ## Design principles
 
