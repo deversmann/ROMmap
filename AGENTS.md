@@ -11,6 +11,13 @@ These instructions apply to contributors and coding agents working in this repos
 
 If instructions conflict, stop and flag the discrepancy before implementing. Never quietly weaken a MUST or an acceptance gate to make a task pass.
 
+## Resuming a session
+
+- Check `git status`, current branch and remote tracking before changing files. Inspect open GitHub PRs and the M0 milestone-gate issue (#7); an unmerged PR is proposed work, not the state of `main`.
+- Read the project status/next action in `README.md` and `docs/ROADMAP.md`, then the linked GitHub issue and any accepted ADRs. Check issue comments and PRs for newer decisions; if the docs are stale, propose a reviewed update instead of guessing.
+- As of the M0 planning handoff, the next decision is stack selection in issue #1 (ADR-0001); PR #8 proposes the latest deployment-context documentation and must be reviewed before relying on it as merged guidance. After that PR merges, use the merged roadmap and issue statuses rather than treating this historical note as a permanent task assignment.
+- If GitHub is unreachable, report which PR/issue state could not be checked and avoid claiming a task was completed or a decision accepted.
+
 ## Before starting work
 
 - Read the linked issue, its requirement IDs, relevant architecture sections, accepted ADRs, and related code/tests.
@@ -29,7 +36,7 @@ If instructions conflict, stop and flag the discrepancy before implementing. Nev
 ## Handoff and review
 
 - Open a PR linked with `Closes #<issue>` (or `Refs #<issue>` for partial work). PR description must name requirement IDs, summarize design and safety impact, list test commands/results, and note limitations, migrations, and manual verification. Do not close an issue for partial work.
-- Reviewers check the diff against the issue, requirements, acceptance tests, safety boundaries, and ADRs. CI and human review are required before merge; no self-approval by the implementing agent.
+- Reviewers check the diff against the issue, requirements, acceptance tests, safety boundaries, and ADRs. CI and human review are required before merge; no self-approval by the implementing agent. The project owner reviews the GitHub PR, requests changes if necessary, and merges when satisfied. The agent must not merge its own PR unless explicitly authorized for that specific PR.
 - On blocked/interrupted work, leave an issue comment with current state, attempted checks, remaining risks, and the next concrete action; use label `status:blocked` as appropriate. On completion, record evidence in the PR/issue and remove transient status labels. Closing the issue follows merge and verified acceptance, not merely code generation.
 - Milestone completion requires the exit gate in `docs/ROADMAP.md` to pass end-to-end. Record the gate outcome in a dedicated milestone-gate GitHub issue, linking tests and remaining blockers. A list of closed tasks alone does not complete a milestone.
 
