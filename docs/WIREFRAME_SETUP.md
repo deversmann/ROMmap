@@ -44,7 +44,7 @@ Conflicts: [View paths and resolution guidance]
 [ Apply safe operations ]  [ Back ]
 ```
 
-Only choose a validated target under a configured root. Show the path examples and why each skip/conflict occurred. Unknown files are preserved; conflicts cannot be resolved by silently overwriting them. The UI must not advertise handheld-device deployment as hardlink-compatible.
+Only choose a validated target under a configured root. Show the path examples and why each skip/conflict occurred. Unknown files are preserved; conflicts cannot be resolved by silently overwriting them. The initial example should offer a Knulli-oriented **local staging layout** for the Anbernic RG34XXSP, with compatibility confirmed on the installed firmware. The UI must not advertise handheld-device deployment as hardlink-compatible; explain that the user will copy staged files to SD manually.
 
 ## Step 4 — Verify and hand off
 
@@ -55,4 +55,4 @@ Target state: synced at profile revision 1, verified just now
 [ Open dashboard ]  [ View audit ]
 ```
 
-If the job is partial or failed, show the last completed action, errors and a safe retry path instead of a success screen. Incomplete scan/import is also visible on the dashboard. DAT upload, device copy/sync and browser game previews are later workflows, not onboarding dependencies.
+If the job is partial or failed, show the last completed action, errors and a safe retry path instead of a success screen. Incomplete scan/import is also visible on the dashboard. Offer a link to manual SD-copy guidance for the staged layout, including the need for enough card space; ROMmap does not perform or verify that copy in the first release. DAT upload, automated device copy/sync and browser game previews are later workflows, not onboarding dependencies.
