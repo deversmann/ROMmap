@@ -1,0 +1,9 @@
+# Local OS/editor artifacts
+.DS_Store
+*.swp
+*.swo
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example

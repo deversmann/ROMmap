@@ -1,0 +1,66 @@
+name: "Task (template 00)"
+description: "Bounded implementation or investigation work tied to ROMmap requirements and a roadmap milestone. This is a template, not GitHub issue #0."
+title: "[M?] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting, select exactly one `milestone:M0`–`milestone:M6` (or `milestone:later`) label and an appropriate `type:*` label. Link dependencies and accepted ADRs. The issue is the task record; completion evidence belongs in the linked PR and issue comments.
+  - type: input
+    id: requirements
+    attributes:
+      label: Requirement IDs
+      description: "Use IDs from docs/REQUIREMENTS.md; for infrastructure tasks, state 'enables REQ-...' and explain."
+      placeholder: "REQ-STO-02, REQ-OPS-01"
+    validations:
+      required: true
+  - type: input
+    id: roadmap
+    attributes:
+      label: Roadmap milestone and exit gate
+      placeholder: "M1 — safe inventory/import; scan does not mutate intake"
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: "One observable result; preferably achievable in one reviewable PR."
+      placeholder: "Scan a configured read-only intake and record source observations."
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: In scope and out of scope
+      placeholder: |
+        In scope: ...
+        Out of scope: ...
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and decisions
+      description: "Link blocking issues and accepted ADRs, or write 'none'. Do not use an unaccepted ADR as an implementation mandate."
+      placeholder: "Blocked by #...; ADR-0001"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance checks
+      description: "Include normal behavior, safety/failure cases, and the evidence needed to close this issue."
+      placeholder: |
+        - [ ] ...
+        - [ ] Automated test: ...
+        - [ ] Manual verification: ...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Risks, test environment, and handoff notes
+      description: "Optional at creation; add progress and test evidence in comments or the linked PR rather than rewriting the initial task definition."
+    validations:
+      required: false
